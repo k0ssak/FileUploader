@@ -1,4 +1,4 @@
-const FileUploader = (function () {
+const FileUploader = (() => {
     class FileUploader {
         constructor (settings) {
             this.xhr = new XMLHttpRequest();
@@ -184,3 +184,12 @@ const FileUploader = (function () {
    
     return FileUploader;
 })();
+
+window.addEventListener('DOMContentLoaded', () => {
+    new FileUploader({
+        $fileInput: document.getElementById('test'),
+        $submitButton: document.getElementById('test-submit'),
+        url: 'localhost',
+        type: 'click'
+    });
+});
